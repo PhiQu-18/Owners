@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C7VW8G5VX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7C7VW8G5VX');
+</script>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koleksi</title>
+  <link rel="stylesheet" href="koleksi.css">
+</head>
+<body>
+
+  <video id="camera" autoplay muted playsinline style="position: fixed; z-index: -1; width: 100vw; height: 100vh; object-fit: cover;"></video>
+<button id="switchCameraBtn" style="position: fixed; top: 10px; right: 10px; z-index: 10;">Ganti Kamera</button>
+
+<script>
+  let currentFacingMode = "user"; // default: kamera depan
+  let stream;
+
+  async function startCamera(facingMode) {
+    if (stream) {
+      // Hentikan stream sebelumnya
+      stream.getTracks().forEach(track => track.stop());
+    }
+
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: facingMode }
+      });
+      document.getElementById('camera').srcObject = stream;
+    } catch (err) {
+      console.error("Gagal mengakses kamera:", err);
+    }
+  }
+
+  document.getElementById('switchCameraBtn').addEventListener('click', () => {
+    currentFacingMode = currentFacingMode === "user" ? "environment" : "user";
+    startCamera(currentFacingMode);
+  });
+
+  // Jalankan kamera pertama kali
+  startCamera(currentFacingMode);
+</script>
+
+  <h1 style="text-align: center; margin-top: 20px;">Galeri Foto & Video</h1>
+
+  <div class="gallery-container">
+    <!-- Gambar 1 -->
+    <div class="gallery-item">
+      <img src="/portopolio/Muammar M D/foto/1.png" alt="Foto 1">
+    </div>
+
+    <!-- Gambar 2 -->
+    <div class="gallery-item">
+      <img src="/portopolio/Muammar M D/foto/2.png" alt="Foto 2">
+    </div>
+
+    <!-- Video 1 -->
+    <div class="gallery-item">
+      <video controls>
+        <source src="------" type="video/mp4">
+        Browser Anda tidak mendukung video.
+      </video>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="gallery-item">
+      <video controls>
+        <source src="video/video2.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+      </video>
+    </div>
+  </div>
+
+</body>
+</html>

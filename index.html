@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7C7VW8G5VX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7C7VW8G5VX');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #ee4d2d;
+      padding: 15px;
+      text-align: right;
+    }
+
+    header button {
+      padding: 10px 15px;
+      font-size: 14px;
+      background-color: white;
+      color: #ee4d2d;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    header button:hover {
+      background-color: #f8d7d7;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      max-width: 250px;
+      flex: 1 1 250px;
+    }
+
+    .container h2 {
+      margin-bottom: 15px;
+    }
+
+    .container button {
+      padding: 10px 15px;
+      font-size: 14px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .container button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Tambahan Header dengan tombol ke halaman marketplace -->
+  <header>
+    <button onclick="window.location.href='Market/index.html'">🛍️ Buka Marketplace</button>
+  </header>
+
+  <div class="row">
+    <div class="container">
+      <h2>Muammar MD</h2>
+      <button onclick="window.location.href='Muammar%20MD/index.html'">Lihat Profil</button>
+    </div>
+
+    <div class="container">
+      <h2>Witra Lusida</h2>
+      <button onclick="window.location.href='Witra%20Lusida/index.html'">Lihat Profil</button>
+    </div>
+
+    <div class="container">
+      <h2>Putri Mardiyah</h2>
+      <button onclick="window.location.href='Putri%20Mardiyah/index.html'">Lihat Profil</button>
+    </div>
+  </div>
+
+</body>
+</html>
